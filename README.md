@@ -1,4 +1,4 @@
-# Personal Information Records
+# CRUD MVC Project
 A simple CRUD Application that allows users to perform basic CRUD (Create, Read, Update, Delete) operations on person records. It includes features likes Searching, sorting operation easily perform.
 
 # Key Features
@@ -14,4 +14,7 @@ A simple CRUD Application that allows users to perform basic CRUD (Create, Read,
 
   ## Installation
   1. Clone the Repository:
+     ````bash
      git clone https://github.com/Rahim17MBSTU/CRUDApplicationMVCProject.git
+     ````
+     
