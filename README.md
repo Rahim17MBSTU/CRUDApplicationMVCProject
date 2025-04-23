@@ -13,7 +13,7 @@ A simple CRUD Application that allows users to perform basic CRUD (Create, Read,
 * Database: SQL Server
 
   ## Installation
-  1. Clone the Repository:
+  Clone the Repository:
      ````bash
      git clone https://github.com/Rahim17MBSTU/CRUDApplicationMVCProject.git
      ````
