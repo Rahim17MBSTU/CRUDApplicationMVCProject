@@ -12,9 +12,10 @@ A simple CRUD Application that allows users to perform basic CRUD (Create, Read,
 * Backend: ASP.NET CORE MVC
 * Database: SQL Server
 
-  ## Installation
+  # Installation
   Clone the Repository:
      ````bash
      git clone https://github.com/Rahim17MBSTU/CRUDApplicationMVCProject.git
      ````
-     
+# Screenshots
+![image](https://github.com/user-attachments/assets/db4600e9-6cfc-4bbf-8dab-4b1786a628b7)
