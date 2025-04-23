@@ -12,7 +12,7 @@ A CRUD Application built with ASP.NET Core MVC that allows users to perform basi
 * Backend: ASP.NET Core MVC
 * Database: SQL Server
 
-  # Installation
+# Installation
   Clone the Repository:
      ````bash
      git clone https://github.com/Rahim17MBSTU/CRUDApplicationMVCProject.git
