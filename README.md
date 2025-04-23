@@ -7,7 +7,7 @@ A simple CRUD Application that allows users to perform basic CRUD (Create, Read,
 * Search: Quickly find person information based on any column name like Name, Email etc
 * Sorting: We can sort asending or descending order.
 
-#Technologies Used
+# Technologies Used
 * Frontend: HTML, CSS
 * Backend: ASP.NET CORE MVC
 * Database: SQL Server
