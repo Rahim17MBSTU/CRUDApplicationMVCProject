@@ -14,4 +14,4 @@ A simple CRUD Application that allows users to perform basic CRUD (Create, Read,
 
   ## Installation
   1. Clone the Repository:
-     
+     git clone https://github.com/Rahim17MBSTU/CRUDApplicationMVCProject.git
