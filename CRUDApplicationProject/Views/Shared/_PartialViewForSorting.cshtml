@@ -1,0 +1,25 @@
+﻿@model (string DisplayName, string PropertyName)
+
+@{
+    var isCurrentSort = ViewBag.CurrentSortBy == Model.PropertyName;
+    var sortOrder = isCurrentSort && ViewBag.CurrentSortOrder == "desc" ? "asc" : "desc";
+    var sortUrl = Url.Action("Index", new
+    {
+        searchBy = ViewBag.CurrentSearchBy,
+        searchString = ViewBag.CurrentSearchString,
+        sortBy = Model.PropertyName,
+        sortOrder = sortOrder
+    });
+}
+
+<th >
+    <a href="@sortUrl" class="sortable-header @(isCurrentSort ? "sorted" : "")">
+        @Model.DisplayName
+        @if (isCurrentSort)
+        {
+                <span class="sort-icon">
+                    <i class="fas fa-arrow-@(ViewBag.CurrentSortOrder == "desc" ? "down" : "up")"></i>
+                </span>
+        }
+    </a>
+</th>

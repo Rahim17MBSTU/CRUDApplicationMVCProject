@@ -1,0 +1,93 @@
+﻿@using CRUDApplicationProject.Models
+@model IEnumerable<Person>
+@{
+    ViewBag.Title = "Persons";
+}
+
+<form asp-controller="Persons" asp-action="Index" method="get">
+
+    <h1>Persons</h1>
+
+    @*For Form Person Create*@
+    <a asp-controller="Persons" asp-action="Create" class="link-hover">Create Person</a>
+    <div class="box flex">
+        <div class="flex-1">
+            <select class="form-input" name="searchBy">
+
+                @*For Drop Down List*@
+                @foreach (var SelectOption in ViewBag.SearchFields)
+                {
+                    if(SelectOption.Value == ViewBag.CurrentSearchBy)
+                    {
+                        <option value="@SelectOption.Key" selected>@SelectOption.Value</option>
+                    }
+                    else
+                    {
+                        <option value="@SelectOption.Key">@SelectOption.Value</option>
+                    }
+                    @* <option value="@SelectOption.Key" @(SelectOption.Key == ViewBag.CurrentSearchBy ? "selected" : "")> *@
+                    @*     @SelectOption.Value *@
+                    @* </option> *@
+                    
+                }
+               
+            </select>
+        </div>
+        <div class="flex-1">
+            <input type="search" id="Search" class="form-input" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+        </div>
+        <div class="flex-1">
+
+            @*For Search Button*@
+            <button class="button button-blue-back">Search</button>
+            
+            @*For Clear button*@
+            <a asp-controller="Persons" asp-action="Index" class="button button-red-back" style="color:white;text-decoration:none" >Clear all</a>
+        </div>
+    </div>
+
+
+    @*For Tabular Database Value List *@
+    <table class="table w-100 mt">
+        <thead>
+            <tr>
+
+                @await Html.PartialAsync("_PartialViewForSorting", ("Person Name", "PersonName"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Email", "Email"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Date of Birth", "DateOfBirth"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Age", "Age"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Gender", "Gender"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Country Name", "CountryName"))
+                @await Html.PartialAsync("_PartialViewForSorting", ("Address", "Address"))
+                <th>options</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @foreach (Person person in Model)
+            {
+                <tr>
+                    <td style="width:9%">@person.PersonName</td>
+                    <td style="width:9%">@person.Email</td>
+                    <td style="width:9%">@person.DateOfBirth?.ToString("dd MMM yyyy")</td>
+                    <td style="width:9%">@person.Age</td>
+                    <td style="width:9%">@person.Gender</td>
+                    <td style="width:9%">@person.CountryName</td>
+                    <td style="width:9%">@person.Address</td>
+                    <td style="width:9%">
+                        <a asp-controller="Persons" asp-action="Edit" asp-route-personId="@person.PersonID" class="button button-green-back" style="color:white;text-decoration:none">Edit</a>
+
+                        <a asp-controller="Persons" asp-action="Delete" asp-route-personId="@person.PersonID" class="button button-red-back" style="color:white ;text-decoration:none">Delete</a>
+                    </td>
+
+                   @*  <td style="width:9%">
+                        <button asp-controller="Persons" asp-action="Edit" asp-route-personId="@person.PersonID" class="link-hover button button-green-back">Edit</button>
+						
+                        <button asp-controller="Persons" asp-action="Delete" asp-route-personId="@person.PersonID" class="link-hover button button-red-back">Delete</button>
+                    </td> *@
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

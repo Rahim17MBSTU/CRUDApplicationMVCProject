@@ -1,0 +1,121 @@
+﻿@model CRUDApplicationProject.Models.Person
+@{
+	ViewBag.Title = "Edit Person";
+}
+<a asp-controller="Persons" asp-action="Index" class="link-hover">Back to List</a>
+<h2>Edit Person</h2>
+
+<div class="w-50">
+	<form asp-controller="Persons" asp-action="Edit" asp-route-personId="@Model.PersonID" method="post">
+		<input type="hidden" asp-for="PersonID" />
+		@*For PersonName*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="PersonName" class="form-label">Person Name</label>
+			</div>
+			<div class="w-75">
+				<input asp-for="PersonName" class="form-input" placeholder="Enter Your Full Name" />
+				<span asp-validation-for="PersonName" class="text-red"></span>
+			</div>
+		</div>
+		
+
+		@*For Email*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Email" class="form-label">Email</label>
+			</div>
+			<div class="w-75">
+				<input asp-for="Email" type="email" class="form-input" placeholder="Enter Your Valid Email Address" />
+				<span asp-validation-for="Email" class="text-red"></span>
+			</div>
+		</div>
+		
+		@*For Date of Birth*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+			</div>
+			<div class="w-75">
+				<input asp-for="DateOfBirth"type="date" class="form-input" />
+				<span asp-validation-for="DateOfBirth" class="text-red"></span>
+			</div>
+		</div>
+
+		@*For Age*@
+		<div  class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Age" class="form-label">Age</label>
+			</div>
+			<div class="w-75">
+				<input asp-for="Age" class="form-input" placeholder="Enter Your Age" />
+				<span asp-validation-for="Age" class="text-red"></span>
+			</div>
+
+		</div>
+
+		@* For Gender *@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label class="form-label">Gender</label>
+			</div>
+			<div class="w-75 flex align-center">
+				<div class="radio-option">
+					<input asp-for="Gender" type="radio" value="Male" />
+					<label for="Male">Male</label>
+				</div>
+				<div class="radio-option">
+					<input asp-for="Gender" type="radio" value="Female" />
+					<label for="Female">Female</label>
+				</div>
+				<div class="radio-option">
+					<input asp-for="Gender" type="radio" value="Other" />
+					<label for="Other">Other</label>
+				</div>
+				<span asp-validation-for="Gender" class="text-red"></span>
+			</div>
+		</div>
+
+		@* For Country Name *@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="CountryName" class="form-label">Country Name</label>
+			</div>
+			<div class="w-75">
+				<input asp-for="CountryName" class="form-input" placeholder="Enter Your Country Name" />
+				<span asp-validation-for="CountryName" class="text-red"></span>
+			</div>
+		</div>
+
+		@* For Address *@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Address" class="form-label">Address</label>
+			</div>
+			<div class="w-75">
+				<textarea asp-for="Address" class="form-input" placeholder="Write Your Address"></textarea>
+				<span asp-validation-for="Address" class="text-red"></span>
+			</div>
+		</div>
+		
+		@*For Submit button*@
+		<div class="form-field flex">
+			<div class="w-25">
+			</div>
+			<div class="w-75">
+				<button class="button button-green-back">Update</button>
+				<a asp-action="Index" class="button button-green-back" style="color:white;text-decoration:none">Cancel</a>
+				
+				<div asp-validation-summary="All" class="text-green"></div>
+			</div>
+		</div>
+
+	</form>
+</div>
+@section scripts{
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
+<script stc="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+<script str="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.validator.unobstrusive" asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+
+}
